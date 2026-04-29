@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏫 EspacioTEC – Sistema de Gestión de Espacios Académicos
 
-## Getting Started
+> 12° Concurso de Programación – Nivel Avanzado  
+> Foro ISC 2026 | TecNM Campus Martínez de la Torre  
+> **Equipo: 404**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 👥 Integrantes
+
+| Nombre | Rol en el equipo |
+|--------|-----------------|
+| [Nombre 1] | [Rol] |
+| [Nombre 2] | [Rol] |
+| [Nombre 3] | [Rol] |
+
+---
+
+## 📋 Descripción del proyecto
+
+**EspacioTEC** es una plataforma web que centraliza la gestión de espacios académicos (salones, laboratorios, centros de cómputo y aulas multiusos) de una institución de educación superior.
+
+La solución permite visualizar en tiempo real el estado de cada espacio, gestionar horarios sin conflictos, registrar incidencias y controlar el acceso mediante roles diferenciados, eliminando el uso de registros manuales y sistemas aislados.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+### Frontend
+- HTML5, CSS3, JavaScript (Vanilla / [Framework si aplica])
+- [Framework CSS: Bootstrap / Tailwind / otro]
+
+### Backend
+- [Lenguaje: PHP / Node.js / Python / otro]
+- [Framework: Laravel / Express / Flask / otro]
+
+### Base de datos
+- MySQL / PostgreSQL / MariaDB
+
+### Control de versiones
+- Git + GitHub
+
+### Herramientas de apoyo
+- [Documentación oficial, MDN, Stack Overflow, etc.]
+- IA generativa: Claude (Anthropic) — ver sección de declaración de uso de IA
+
+---
+
+## 🗂️ Estructura del proyecto
+
+```
+EspacioTEC/
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── views/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   └── routes/
+├── database/
+│   ├── schema.sql          ← Script de creación de tablas
+│   └── seed.sql            ← Datos de prueba
+├── docs/
+│   └── diseño.pdf          ← Documento de diseño (máx. 2 cuartillas)
+├── bitacora.md             ← Bitácora de desarrollo
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Instalación y ejecución
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Requisitos previos
+- [PHP 8.x / Node.js 18+ / Python 3.x] instalado
+- MySQL 8.x o MariaDB
+- Servidor local: XAMPP / WAMP / Laragon / otro
 
-## Learn More
+### Pasos
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/[usuario]/espaciotec.git
+   cd espaciotec
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Crear la base de datos**
+   ```bash
+   mysql -u root -p < database/schema.sql
+   mysql -u root -p espaciotec < database/seed.sql
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Configurar variables de entorno**
+   ```bash
+   cp .env.example .env
+   # Editar .env con tus credenciales de BD
+   ```
 
-## Deploy on Vercel
+4. **Instalar dependencias** *(si aplica)*
+   ```bash
+   # Para Node.js
+   npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # Para PHP con Composer
+   composer install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Ejecutar el servidor**
+   ```bash
+   # Node.js
+   npm start
+
+   # PHP built-in server
+   php -S localhost:8000 -t public/
+   ```
+
+6. **Abrir en el navegador**
+   ```
+   http://localhost:8000
+   ```
+
+---
+
+## 👤 Usuarios de prueba
+
+| Rol | Usuario | Contraseña |
+|-----|---------|------------|
+| Administrador | admin@tec.mx | Admin123 |
+| Área Académica | academica@tec.mx | Acad123 |
+| Prefecto | prefecto@tec.mx | Pref123 |
+
+---
+
+## 🔑 Módulos del sistema
+
+- **Autenticación** – Login seguro con control de sesiones y roles
+- **Gestión de espacios** – CRUD de salones, laboratorios y aulas con capacidad y equipamiento
+- **Horarios** – Asignación, consulta y validación de conflictos de horario
+- **Estado en tiempo real** – Visualización de disponibilidad: Libre / Ocupado / Mantenimiento
+- **Incidencias** – Registro de ausencias docentes y fallas en espacios
+- **Mantenimiento** – Seguimiento básico de fallas reportadas
+
+---
+
+## 🤖 Declaración de uso de Inteligencia Artificial
+
+**Herramienta utilizada:** Claude (Anthropic) – claude.ai
+
+**¿Para qué se utilizó?**
+- Generación del archivo README
+- Apoyo en la redacción de comentarios de código
+- Sugerencias de estructura del modelo de datos
+- [Agregar otras partes si aplica]
+
+**¿Qué partes fueron generadas o apoyadas por IA?**
+- Este archivo README fue generado con apoyo de Claude
+- [Listar otras partes concretas]
+
+**Prompts utilizados:**
+- `"Has el readme que pide el concurso [...] el nombre del equipo son los 404"`
+- [Agregar otros prompts si se utilizaron durante el desarrollo]
+
+> **Nota:** El equipo comprende y domina técnicamente todo el código entregado y está en capacidad de defenderlo ante el jurado.
+
+---
+
+## 📬 Entrega
+
+Repositorio enviado al correo: **concurso.isc@martineztorre.tecnm.mx**
+
+---
+
+*12° Concurso de Programación – Foro ISC 2026 | TecNM Campus Martínez de la Torre*
