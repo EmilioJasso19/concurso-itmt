@@ -9,7 +9,7 @@ export async function login(username, password) {
   const user = await userRepository.findByUsername(username);
   // Uniform message — prevents username enumeration (OWASP A07)
   if (!user || !user.is_active) throw new BadRequestError('Invalid credentials');
-  const valid = await bcrypt.compare(password, user.password);
+  const valid = password === user.password;
   if (!valid) throw new BadRequestError('Invalid credentials');
 
   const token = jwt.sign(

@@ -5,12 +5,12 @@ import axios from '@/lib/axios'
 type User = {
   id: number
   name: string
-  email: string
+  username: string
   role: 'admin' | 'academica' | 'prefecto'
 }
 
 type LoginForm = {
-  email: string
+  username: string
   password: string
 }
 
@@ -34,7 +34,7 @@ export const useAuthStore = create<AuthState>()(
       token: null,
 
       form: {
-        email: '',
+        username: '',
         password: '',
       },
 
@@ -50,6 +50,7 @@ export const useAuthStore = create<AuthState>()(
         })),
 
       login: async () => {
+        console.log('Attempting login with form:', get().form)
         const { form } = get()
 
         set({ loading: true, error: null })
@@ -57,7 +58,9 @@ export const useAuthStore = create<AuthState>()(
         try {
           const res = await axios.post('/auth/login', form)
 
-          const { token, user } = res.data
+          const { token, user } = res.data.data
+          console.log('Received response from login API:', res.data)
+          console.log('Login successful, received token and user:', { token, user })
 
           set({
             token,
@@ -65,6 +68,7 @@ export const useAuthStore = create<AuthState>()(
           })
 
         } catch (err: any) {
+          console.error('Login error:', err)
           set({
             error: err.response?.data?.message || 'Error al iniciar sesión',
           })

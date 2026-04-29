@@ -1,13 +1,16 @@
 "use client";
 
 import { useAuthStore } from "@/stores/auth.store";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
 	const { form, setField, login, loading, error } = useAuthStore();
+	const router = useRouter();
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		await login();
+		router.push("horarios");
 	};
 
 	return (
@@ -28,16 +31,14 @@ export default function LoginPage() {
 
 					<div className="p-6 space-y-5">
 						<form onSubmit={handleSubmit} className="space-y-4">
-							{/* EMAIL */}
 							<div className="flex flex-col gap-1">
 								<label className="text-xs uppercase tracking-wide text-gray-600">
 									Correo
 								</label>
 								<input
-									type="email"
 									placeholder="admin@espaciotec.com"
-									value={form.email}
-									onChange={(e) => setField("email", e.target.value)}
+									value={form.username}
+									onChange={(e) => setField("username", e.target.value)}
 									className="
                     w-full h-11 px-3 
                     border border-gray-300 
