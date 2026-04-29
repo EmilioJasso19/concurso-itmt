@@ -8,11 +8,9 @@
 
 ## 👥 Integrantes
 
-| Nombre | Rol en el equipo |
-|--------|-----------------|
-| [Nombre 1] | [Rol] |
-| [Nombre 2] | [Rol] |
-| [Nombre 3] | [Rol] |
+- [Nombre 1]
+- [Nombre 2]
+- [Nombre 3]
 
 ---
 
@@ -27,15 +25,14 @@ La solución permite visualizar en tiempo real el estado de cada espacio, gestio
 ## 🛠️ Tecnologías utilizadas
 
 ### Frontend
-- HTML5, CSS3, JavaScript (Vanilla / [Framework si aplica])
-- [Framework CSS: Bootstrap / Tailwind / otro]
+- Next.js 16 (React)
+- CSS Modules / Tailwind CSS
 
 ### Backend
-- [Lenguaje: PHP / Node.js / Python / otro]
-- [Framework: Laravel / Express / Flask / otro]
+- Node.js + Express
 
 ### Base de datos
-- MySQL / PostgreSQL / MariaDB
+- MySQL
 
 ### Control de versiones
 - Git + GitHub
@@ -74,9 +71,9 @@ EspacioTEC/
 ## ⚙️ Instalación y ejecución
 
 ### Requisitos previos
-- [PHP 8.x / Node.js 18+ / Python 3.x] instalado
+- Node.js 18+
 - MySQL 8.x o MariaDB
-- Servidor local: XAMPP / WAMP / Laragon / otro
+- npm o pnpm
 
 ### Pasos
 
@@ -98,27 +95,29 @@ EspacioTEC/
    # Editar .env con tus credenciales de BD
    ```
 
-4. **Instalar dependencias** *(si aplica)*
+4. **Instalar dependencias**
    ```bash
-   # Para Node.js
+   # Frontend (Next.js)
+   cd frontend
    npm install
 
-   # Para PHP con Composer
-   composer install
+   # Backend (Express)
+   cd ../backend
+   npm install
    ```
 
 5. **Ejecutar el servidor**
    ```bash
-   # Node.js
-   npm start
+   # Backend (Express) — desde /backend
+   npm run dev
 
-   # PHP built-in server
-   php -S localhost:8000 -t public/
+   # Frontend (Next.js) — desde /frontend
+   npm run dev
    ```
 
 6. **Abrir en el navegador**
    ```
-   http://localhost:8000
+   http://localhost:3000
    ```
 
 ---
@@ -146,23 +145,7 @@ EspacioTEC/
 
 ## 🤖 Declaración de uso de Inteligencia Artificial
 
-**Herramienta utilizada:** Claude (Anthropic) – claude.ai
-
-**¿Para qué se utilizó?**
-- Generación del archivo README
-- Apoyo en la redacción de comentarios de código
-- Sugerencias de estructura del modelo de datos
-- [Agregar otras partes si aplica]
-
-**¿Qué partes fueron generadas o apoyadas por IA?**
-- Este archivo README fue generado con apoyo de Claude
-- [Listar otras partes concretas]
-
-**Prompts utilizados:**
-- `"Has el readme que pide el concurso [...] el nombre del equipo son los 404"`
-- [Agregar otros prompts si se utilizaron durante el desarrollo]
-
-> **Nota:** El equipo comprende y domina técnicamente todo el código entregado y está en capacidad de defenderlo ante el jurado.
+**Herramienta utilizada:** Claude (Anthropic) – [claude.ai](http://claude.ai) y ChatGPT (OpenAI)
 
 ---
 
