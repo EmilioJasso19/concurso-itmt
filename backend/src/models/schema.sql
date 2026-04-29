@@ -109,11 +109,3 @@ CREATE TABLE maintenance (
     CONSTRAINT fk_maint_created    FOREIGN KEY (created_by)  REFERENCES users(id),
     CONSTRAINT fk_maint_updated    FOREIGN KEY (updated_by)  REFERENCES users(id)
 ) ENGINE=InnoDB;
-
--- ============================================================
--- SEED: test users  (password: Admin123!)
--- ============================================================
-INSERT INTO users (name, username, password, role) VALUES
-('Administrator', 'admin',    '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-('Academic Area', 'academic', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'academic'),
-('Prefect',       'prefect',  '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'prefect');

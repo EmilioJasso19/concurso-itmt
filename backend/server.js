@@ -2,8 +2,17 @@ import 'dotenv/config';
 import app from './src/app.js';
 import logger from './src/utils/logger.js';
 import { validateEnv } from './src/config/env.js';
+import Database from './src/config/database.js';
 
 validateEnv();
+
+try {
+  await Database.getInstance().query('SELECT 1');
+  logger.info('Database connection verified');
+} catch (err) {
+  logger.error('Database unreachable at startup', { message: err.message });
+  process.exit(1);
+}
 
 const PORT = process.env.PORT || 3001;
 
