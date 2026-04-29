@@ -8,9 +8,9 @@
 
 ## 👥 Integrantes
 
-- [Nombre 1]
-- [Nombre 2]
-- [Nombre 3]
+- Alegría Rodríguez Yahir Humberto
+- Jasso López Andrés Emilio
+- Frias Garcia Kevin Sebastian
 
 ---
 
