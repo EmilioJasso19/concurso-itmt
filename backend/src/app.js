@@ -13,7 +13,7 @@ app.use(helmet());
 
 // OWASP A05 — restrict origins
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:4200',
+  origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,

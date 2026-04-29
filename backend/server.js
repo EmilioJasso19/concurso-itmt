@@ -5,7 +5,7 @@ import { validateEnv } from './src/config/env.js';
 
 validateEnv();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const server = app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT} [${process.env.NODE_ENV}]`);
